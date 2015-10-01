@@ -48,12 +48,16 @@ module Method2 =
     *)
     begin
 
+//    let getSum x =
+//        let a = (MAX - 1) / x // get the maximum factor S, using (MAX - 1) to make sure a < S: see below
+//        [0..a]// list includes a, so a<S is required
+//        |>List.map(fun i -> i*x)
+//        //|>List.map(fun x -> printfn "%A\n" x; x)
+//        |>List.sum
+
     let getSum x =
-        let a = (MAX - 1) / x // get the maximum factor S, using (MAX - 1) to make sure a < S: see below
-        [0..a]// list includes a, so a<S is required
-        |>List.map(fun i -> i*x)
-        //|>List.map(fun x -> printfn "%A\n" x; x)
-        |>List.sum
+        let a = (MAX - 1)/x
+        (0 + a*x) * (a + 1) / 2
 
     let solve =
         getSum 3 + getSum 5 - getSum (3*5)
