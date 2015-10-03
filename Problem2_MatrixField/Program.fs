@@ -14,14 +14,39 @@ module Method1 =
         |n when n = 1I -> 1I
         |n -> fib(n-1I) + fib(n-2I)
 
+    let rec search lst n =
+        match (fib n) with
+        | a when a < MAX && (a%2I = 0I) -> search (a::lst) (n+1I)
+        | a when a < MAX -> search lst (n+1I)
+        | _ -> lst
+        
+    let solve a =
+        search [] 0I
+        |>List.sum
+        |>printfn "%A\n"
+
 module Method2 = 
-    let fib x =
-        let rec func prev1 prev2 = function
+    let fib n =
+        let rec loop prev1 prev2 = function
             |n when n = 0I -> prev1
-            |n -> func prev2 (prev1 + prev2) (n - 1I)
-        func 0I 1I x
+            |n -> loop (prev1 + prev2) prev1 (n - 1I)
+        loop 1I 0I n
+
+    let rec search lst n =
+        match (fib n) with
+        | a when a < MAX && (a%2I = 0I) -> search (a::lst) (n+1I)
+        | a when a < MAX -> search lst (n+1I)
+        | _ -> lst
+        
+    let solve a =
+        search [] 0I
+        |>List.sum
+        |>printfn "%A"
 
 [<EntryPoint>]
 let main argv = 
-    printfn "%A" argv
+    Method1.solve 1
+
+    Method2.solve 1
+
     0 // return an integer exit code
