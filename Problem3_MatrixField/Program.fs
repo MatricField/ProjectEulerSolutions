@@ -68,6 +68,12 @@ module Method2 =
 module Method3 =
     // search primes factors in-place
 
+    let productOf lst =
+        let rec loop result = function
+            |[] -> result
+            |head::tail -> loop (head*result) tail
+        loop 1I lst
+
     let rec isPrime x = function
         |[] -> true
         |head::otherPrimes when (x % head <> 0I) -> isPrime x otherPrimes
@@ -80,7 +86,12 @@ module Method3 =
                 match n with
                 |_ when (isPrime n primes) ->
                     match n with
-                    |_ when (x%n = 0I) -> printfn"prime factor:%A" n; loop (n::primes) (n::primeFactors) (n+1I)
+                    |_ when (x%n = 0I) ->
+                        printfn"prime factor:%A" n
+                        let futureFactorList = n::primeFactors
+                        match productOf futureFactorList with
+                        |m when m> x/2I -> futureFactorList
+                        |_ -> loop (n::primes) futureFactorList (n+1I)
                     |_ -> loop (n::primes) primeFactors (n+1I)
                 |_ -> loop primes primeFactors (n+1I)
             |_ -> raise (System.InvalidOperationException "Logic Error")
