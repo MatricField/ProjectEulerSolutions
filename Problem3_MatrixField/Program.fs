@@ -88,7 +88,7 @@ module Method3 =
                     match n with
                     |_ when (x%n = 0I) ->
                         printfn"prime factor:%A" n
-                        let futureFactorList = n::primeFactors
+                        let futureFactorList = primeFactors |> List.append [n]
                         match productOf futureFactorList with
                         |m when m> x/2I -> futureFactorList
                         |_ -> loop (n::primes) futureFactorList (n+1I)
@@ -100,6 +100,30 @@ module Method3 =
 
     let solve x = findPrimeFactorsOf x |> List.head
 
+module Method4 =
+    //using unique factorization theorm
+    let factorize x =
+        let findNextFactorOf n x =
+
+            let rec loop = function
+                |k when (x%k = 0I) -> k
+                |k -> loop (k+1I)
+
+            loop n
+
+        let rec fectorOut factor = function
+            |n when (n=1I) || (n%factor <> 0I) -> n
+            |n -> fectorOut factor (n/factor)
+
+        let rec loop factorList n =
+            let k = factorList|>List.head
+            printfn "Prime factor: %A" k
+            match fectorOut k n with
+                |next when next = 1I -> factorList
+                |next ->loop ((findNextFactorOf k next)::factorList) next
+
+        loop [findNextFactorOf 2I x] x
+
 //let rec sortedListEquals = function
 //    |([],[]) -> true
 //    |([],_) -> false
@@ -109,6 +133,7 @@ module Method3 =
 
 [<EntryPoint>]
 let main argv =
-    Method3.solve TARGET
-    |>printfn "%A"
+    Method4.factorize 600851475143600851475143I
+    //|>List.map (fun x-> printfn "%A" x)
+    |>ignore
     0 // return an integer exit code
