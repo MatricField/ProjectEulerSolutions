@@ -7,7 +7,33 @@
 
 module Method1 =
     
-    let factorize = Probelm3.Method4.factorize
+    let factorize =
+        let findNextFactorOf n =
+            let rec loop = function
+                |k when (n%k = 0I) -> k
+                |k -> loop (k+1I)
+        
+            function
+            |[]-> loop 2I
+            |(head,_)::tail -> loop head
+    
+        let fectorOut factor x =
+            let rec loop count = function
+            |remains when (remains=1I) || (remains%factor <> 0I) -> (remains, count)
+            |n -> loop (count+1I) (n/factor)
+            loop 0I x
+    
+        let rec loop factorList n =
+            let k = findNextFactorOf n factorList
+            let (r,c) = fectorOut k n
+            //printfn "prime factor: %A, power: %A, remains: %A" k c r
+            match r with
+                |next when next = 1I -> (k,c)::factorList
+                |next ->loop ((k,c)::factorList) next
+        function
+        |n when n = 1I -> [(1I,1I)]
+        |n when n > 1I -> loop [] n
+        |_ -> raise (System.NotImplementedException "factorization for negtive values are not supported")
 
     // failed method
     let lowerBound = 10I*10I
@@ -41,12 +67,12 @@ module Method1 =
         |[] -> result
         |head::tail ->
             match factorize head with
-            |[factor] when factor = head -> findComposite result tail
+            |[(factor,_)] when factor = head -> findComposite result tail
             |_ -> findComposite (head::result) tail
 
-    let solve =
-        scan [] (fun x-> x-1I) upperBound
-        |>findComposite []
+//    let solve =
+//        scan [] (fun x-> x-1I) upperBound
+//        |>findComposite []
 
 module Method2 =
     let isPal = Method1.isPal
@@ -64,15 +90,23 @@ module Method2 =
             |x when isPal x -> scan iter (x::result) (iter a, b)
             |_ -> scan iter result (iter a, b)
     
-    let solve =
-        scan (fun x-> x-1I) [] (MAX,MAX)
-        |>List.map (fun x-> printfn "%A" x; x)
-        |>List.toArray
-        |>Array.sortDescending
-        |>Array.head
+//    let solve =
+//        scan (fun x-> x-1I) [] (MAX,MAX)
+//        |>List.map (fun x-> printfn "%A" x; x)
+//        |>List.toArray
+//        |>Array.sortDescending
+//        |>Array.head
+
+
+
 [<EntryPoint>]
 let main argv = 
-    Method2.solve
+    //Method2.solve
     //|>List.head
-    |>printfn "Solution: %A"
+    //|>printfn "Solution: %A"
+
+    Method1.factorize 2520I
+    |>List.map (fun x->printfn "%A" x)
+    |>ignore
+
     0 // return an integer exit code

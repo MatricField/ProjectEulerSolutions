@@ -11,6 +11,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Problem3_MatrixField", "Pro
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Problem4_MatrixField", "Problem4_MatrixField\Problem4_MatrixField.fsproj", "{51BA9099-F08B-4E60-A2BB-A47791FA6D21}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Problem5_MatrixField", "Problem5_MatrixField\Problem5_MatrixField.fsproj", "{BABF7F22-0DDA-4BA3-A8C6-1C805F209E54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{51BA9099-F08B-4E60-A2BB-A47791FA6D21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51BA9099-F08B-4E60-A2BB-A47791FA6D21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51BA9099-F08B-4E60-A2BB-A47791FA6D21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BABF7F22-0DDA-4BA3-A8C6-1C805F209E54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BABF7F22-0DDA-4BA3-A8C6-1C805F209E54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BABF7F22-0DDA-4BA3-A8C6-1C805F209E54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BABF7F22-0DDA-4BA3-A8C6-1C805F209E54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
