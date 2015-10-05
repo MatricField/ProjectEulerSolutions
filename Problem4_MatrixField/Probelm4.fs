@@ -47,13 +47,7 @@ module Method1 =
         loop [] num
 
     let checkIfPal arrOfDigits =
-        let reversed = arrOfDigits|> List.rev
-        let rec equal = function
-            |(head1::tail1, head2::tail2) when head1 <> head2 -> false
-            |(head1::tail1, head2::tail2) -> equal (tail1, tail2)
-            |([],[])->true
-            |_ -> raise (System.InvalidOperationException "")
-        equal (arrOfDigits, reversed)
+        (arrOfDigits = (arrOfDigits|>List.rev))
 
     let isPal num =
         digitsOf num |> checkIfPal
@@ -90,23 +84,18 @@ module Method2 =
             |x when isPal x -> scan iter (x::result) (iter a, b)
             |_ -> scan iter result (iter a, b)
     
-//    let solve =
-//        scan (fun x-> x-1I) [] (MAX,MAX)
-//        |>List.map (fun x-> printfn "%A" x; x)
-//        |>List.toArray
-//        |>Array.sortDescending
-//        |>Array.head
+    let solve =
+        scan (fun x-> x-1I) [] (MAX,MAX)
+        //|>List.map (fun x-> printfn "%A" x; x)
+        |>List.toArray
+        |>Array.sortDescending
+        |>Array.head
 
 
 
 [<EntryPoint>]
 let main argv = 
-    //Method2.solve
-    //|>List.head
-    //|>printfn "Solution: %A"
-
-    Method1.factorize 2520I
-    |>List.map (fun x->printfn "%A" x)
-    |>ignore
+    Method2.solve
+    |>printfn "Solution: %A"
 
     0 // return an integer exit code
