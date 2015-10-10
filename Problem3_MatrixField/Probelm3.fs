@@ -74,9 +74,10 @@ module Method3 =
             |head::tail -> loop (head*result) tail
         loop 1I lst
 
+    //given a list of known primes, use flitering method to determines if x is a prime
     let rec isPrime x = function
-        |[] -> true
         |head::otherPrimes when (x % head <> 0I) -> isPrime x otherPrimes
+        |[] -> true
         |_ -> false
 
     let findPrimeFactorsOf x =

@@ -5,14 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>eb3f89cf-b5ee-4e39-bb2a-d4d613771295</ProjectGuid>
+    <ProjectGuid>d819e6ab-812e-4c30-bac2-4082ccdb75d8</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>PlayGround</RootNamespace>
-    <AssemblyName>PlayGround</AssemblyName>
+    <RootNamespace>Problem8_MatrixField</RootNamespace>
+    <AssemblyName>Problem8_MatrixField</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
-    <Name>PlayGround</Name>
+    <Name>Problem8_MatrixField</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,7 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Debug\PlayGround.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\Problem8_MatrixField.XML</DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -34,7 +34,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Release\PlayGround.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Problem8_MatrixField.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
@@ -48,7 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="Program1.fs" />
+    <Compile Include="Problem8.fs" />
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
