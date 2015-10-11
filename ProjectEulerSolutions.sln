@@ -23,6 +23,10 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Misc", "Misc\Misc.fsproj", 
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Problem8_MatrixField", "Problem8_MatrixField\Problem8_MatrixField.fsproj", "{D819E6AB-812E-4C30-BAC2-4082CCDB75D8}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Problem9_MatrixField", "Problem9_MatrixField\Problem9_MatrixField.fsproj", "{DF9562D6-C2E0-48AB-AFD0-A443F8A6AC1A}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Math", "Math\Math.fsproj", "{2FE8847C-89A3-49F4-B4CA-4D30D04A883A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{D819E6AB-812E-4C30-BAC2-4082CCDB75D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D819E6AB-812E-4C30-BAC2-4082CCDB75D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D819E6AB-812E-4C30-BAC2-4082CCDB75D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF9562D6-C2E0-48AB-AFD0-A443F8A6AC1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF9562D6-C2E0-48AB-AFD0-A443F8A6AC1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF9562D6-C2E0-48AB-AFD0-A443F8A6AC1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF9562D6-C2E0-48AB-AFD0-A443F8A6AC1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FE8847C-89A3-49F4-B4CA-4D30D04A883A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FE8847C-89A3-49F4-B4CA-4D30D04A883A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FE8847C-89A3-49F4-B4CA-4D30D04A883A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FE8847C-89A3-49F4-B4CA-4D30D04A883A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
