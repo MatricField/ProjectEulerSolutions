@@ -5,14 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>996ac7a2-1702-4f7f-8cdf-bb8088ee65d0</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>Misc</RootNamespace>
-    <AssemblyName>Misc</AssemblyName>
+    <ProjectGuid>{3b28a5d0-b64a-4e90-be9e-06bb7406e95c}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Problem13_MatrixField</RootNamespace>
+    <AssemblyName>Problem13_MatrixField</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
-    <Name>Misc</Name>
+    <Name>Template</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,7 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Debug\Misc.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\Template.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -34,7 +34,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Release\Misc.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Template.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
@@ -48,9 +48,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="Chrono.fs" />
+    <Compile Include="Problem13.fs" />
     <None Include="App.config" />
-    <Compile Include="Text.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Math\Math.fsproj">
+      <Name>Math</Name>
+      <Project>{2fe8847c-89a3-49f4-b4ca-4d30d04a883a}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Misc\Misc.fsproj">
+      <Name>Misc</Name>
+      <Project>{996ac7a2-1702-4f7f-8cdf-bb8088ee65d0}</Project>
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
