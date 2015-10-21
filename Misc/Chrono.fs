@@ -3,6 +3,8 @@
 module Chrono =
 
     let time func vars =
+        func vars |> ignore //get rid of the compile time
+
         let t1 = System.DateTime.Now
 
         let result = func vars

@@ -32,14 +32,17 @@ module Method2 =
             |n -> loop (prev1 + prev2) prev1 (n - 1I)
         loop 1I 0I n
 
-    let rec search lst n =
-        match (fib n) with
-        | a when a < MAX && (a%2I = 0I) -> search (a::lst) (n+1I)
-        | a when a < MAX -> search lst (n+1I)
-        | _ -> lst
+    //function that generate a list of even fib numbers in range [0..max)
+    let generateList max =
+        let rec search lst n =
+            match (fib n) with
+            | a when a < max && (a%2I = 0I) -> search (a::lst) (n+1I)
+            | a when a < max -> search lst (n+1I)
+            | _ -> lst
+        search [] 0I
         
     let solve a =
-        search [] 0I
+        generateList MAX
         |>List.sum
         |>printfn "%A"
 

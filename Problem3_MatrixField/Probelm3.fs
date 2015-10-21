@@ -130,13 +130,6 @@ module Method4 =
     let solve =
         factorize TARGET |> List.head
 
-//let rec sortedListEquals = function
-//    |([],[]) -> true
-//    |([],_) -> false
-//    |(_,[]) -> false
-//    |(head1::tail1, head2::tail2) when (head1 = head2) -> sortedListEquals (tail1,tail2)
-//    |(head1::tail1, head2::tail2) when (head1 <> head2) -> false
-
 [<EntryPoint>]
 let main argv =
     Method4.solve
