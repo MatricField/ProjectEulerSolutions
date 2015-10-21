@@ -212,15 +212,15 @@ module Method2_1 =
 [<EntryPoint>]
 let main argv = 
 
-    let (r,t1) = Misc.Chrono.time (Method1.solve) ()
+    let (r,t1) = Misc.Chrono.timeQuick (Method1.solve) ()
 
     printfn "result: %A, t1 %Ams" r t1.TotalMilliseconds
 
-    let (r,t2) = Misc.Chrono.time (Method2.solve) ()
+    let (r,t2) = Misc.Chrono.timeQuick (Method2.solve) ()
 
     printfn "result: %A, t1 %Ams" r t2.TotalMilliseconds
 
-    let (r,t3) = Misc.Chrono.time (Method2_1.solve) ()
+    let (r,t3) = Misc.Chrono.timeQuick (Method2_1.solve) ()
 
     printfn "result: %A, t2 %Ams" r t3.TotalMilliseconds
 

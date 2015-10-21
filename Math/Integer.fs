@@ -1,35 +1,34 @@
 ﻿namespace Math
 module Integer =
+
+    let sqrtBigint x =
+        float x
+        |>sqrt
+        |>System.Math.Floor
+        |>string
+        |>System.Numerics.BigInteger.Parse
+
+    let sqrtInt x =
+        float x
+        |>sqrt
+        |>System.Math.Floor
+        |>int
+
     module Prime =
+
+        let findPrimesBelowBigint x =
+            let rec loop result = function
+                |head::tail when head <= sqrtBigint x -> loop (head::result) (List.filter (fun x-> x%head<>0I) tail)
+                |lst -> result@lst
+                |[] -> result
+            loop [] [2I..x-1I]
+
         let findPrimesBelow x =
-            let rec isPrime x = function
-                |[] -> true
-                |head::otherPrimes when (x % head <> 0I) -> isPrime x otherPrimes
-                |_ -> false
-
-            let rec loop primes = function
-                |n when n = x -> primes
-                |n when n < x ->
-                    match n with
-                    |_ when (isPrime n primes) -> (*printfn "prime:%A" n;*) loop (n::primes) (n+1I)
-                    |_ -> loop primes (n+1I)
-                |_ -> raise (System.InvalidOperationException "Impossible state reached")
-            loop [] 2I
-
-        let findPrimesBelowInt x =
-            let rec isPrime x = function
-                |[] -> true
-                |head::otherPrimes when (x % head <> 0) -> isPrime x otherPrimes
-                |_ -> false
-
-            let rec loop primes = function
-                |n when n = x -> primes
-                |n when n < x ->
-                    match n with
-                    |_ when (isPrime n primes) -> (*printfn "prime:%A" n;*) loop (n::primes) (n+1)
-                    |_ -> loop primes (n+1)
-                |_ -> raise (System.InvalidOperationException "Impossible state reached")
-            loop [] 2
+            let rec loop result = function
+                |head::tail when head <= sqrtInt x -> loop (head::result) (List.filter (fun x-> x%head<>0) tail)
+                |lst -> result@lst
+                |[] -> result
+            loop [] [2..x-1]
 
     ///function that factorize an integer and return a list of (factor, power) pairs
     let factorize =

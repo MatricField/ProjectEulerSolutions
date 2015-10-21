@@ -48,13 +48,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="Program.fs" />
+    <Compile Include="Problem10.fs" />
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Math\Math.fsproj">
       <Name>Math</Name>
       <Project>{2fe8847c-89a3-49f4-b4ca-4d30d04a883a}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Misc\Misc.fsproj">
+      <Name>Misc</Name>
+      <Project>{996ac7a2-1702-4f7f-8cdf-bb8088ee65d0}</Project>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
