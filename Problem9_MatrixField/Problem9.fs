@@ -26,7 +26,7 @@ module Method2 =
     *)
 
     let factorListOf x =
-        let row = Math.Integer.factorize x
+        let row = Math.Integer.factorizeBigint x
         let rec loop1 result = function
             |(_, 0) -> result
             |(bas, exp) -> loop1 (bas::result) (bas, exp-1)
