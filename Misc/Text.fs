@@ -20,3 +20,9 @@ module Text =
             |>Array.Parallel.map (fun str -> str.Trim())
             |>Array.Parallel.map (fun str -> System.Text.RegularExpressions.Regex.Replace(str,"\s+","|"))
             |>Array.Parallel.map (fun str -> str.Split('|'))
+
+    let printTable table =
+        for line in table do
+            for elm in line do
+                printf "%A " elm
+            printfn ""
