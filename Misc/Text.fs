@@ -4,7 +4,7 @@ module Text =
     module ListParser =
         ///seprate each entry with white space characters
         let breakWhiteSpace str =
-            System.Text.RegularExpressions.Regex.Replace(str,"\s+","|")
+            System.Text.RegularExpressions.Regex.Replace(str,"""\s+""","|")
             |> fun x-> x.Split('|')
 
         ///seprate each entry with newLine characters
@@ -15,7 +15,7 @@ module Text =
     module TableParser =
         ///use newLine to seperate rows and other white space to seperate columns
         let parse str =
-            System.Text.RegularExpressions.Regex.Replace(str,"\n+","|")
+            System.Text.RegularExpressions.Regex.Replace(str,"""\n+""","|")
             |>fun x -> x.Split('|')
             |>Array.Parallel.map (fun str -> str.Trim())
             |>Array.Parallel.map (fun str -> System.Text.RegularExpressions.Regex.Replace(str,"\s+","|"))

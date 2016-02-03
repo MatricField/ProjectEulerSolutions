@@ -41,15 +41,15 @@ module Method2 =
             | _ -> lst
         search [] 0I
         
-    let solve a =
+    let solve () =
         generateList MAX
         |>List.sum
         |>printfn "%A"
 
 [<EntryPoint>]
 let main argv = 
-    Method1.solve 1
+    Method1.solve ()
 
-    Method2.solve 1
+    Method2.solve ()
 
     0 // return an integer exit code

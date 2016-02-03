@@ -11,15 +11,15 @@ module Sequence =
         /// condition is a function that determines when to stop
         /// where the first parameter is the index of the current Lucas number
         /// the second is the current Lucas number
-        let mainLoop A0 A1 P Q condition=
+        let inline mainLoop A0 A1 P Q condition=
             let inline advance prev1 prev2 = next prev1 prev2 P Q
             let rec loop prev1 prev2 = function
                 |count when condition count prev1 -> prev1
-                |count -> loop (advance prev1 prev2) prev1 (count+1I)
+                |count -> loop <| advance prev1 prev2 <| prev1 <| count+1I
             loop A1 A0 1I
 
         let compute A0 A1 P Q = function
-            |x when x<0I -> raise (System.ArgumentException "lucas sequence of x when x<0 is undefined")
+            |x when x<0I -> raise <| System.ArgumentException "lucas sequence of x when x<0 is undefined"
             |x when x=0I -> A0
             |x -> mainLoop A0 A1 P Q (fun n _ ->n<x)
 
@@ -29,10 +29,10 @@ module Sequence =
             let rec loop result prev1 prev2 = function
                 |count when count = x -> result
                 |count ->
-                    let current = (P*prev1 - Q*prev2)
-                    loop (prev1::result) current prev1 (count+1I)
+                    let current = P*prev1 - Q*prev2
+                    loop <| prev1::result <| current <| prev1 <| count+1I
             match x with
-            |_ when x<0I -> raise (System.ArgumentException "lucas sequence of x when x<0 is undefined")
+            |_ when x<0I -> raise <| System.ArgumentException "lucas sequence of x when x<0 is undefined"
             |_ when x=0I -> [A0]
             |_ -> loop [] A1 A0 1I
 

@@ -33,7 +33,7 @@ module Method1 =
         fib (fun count current -> result<-count; current.ToString().Length >= x)|>ignore
         result
 
-    let solve _ =
+    let solve () =
         firstFibHasDigit 1000
 
 [<EntryPoint>]

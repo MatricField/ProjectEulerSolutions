@@ -14,7 +14,7 @@ module Method1 =
         |>List.map (fun x-> bigint(x))
         |>List.sum
 
-    let solve _ =
+    let solve () =
         task target
         
 

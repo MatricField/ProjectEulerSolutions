@@ -116,26 +116,22 @@ module Method1 =
     /// function to find local maximum
     /// yield an array containing the local max whose root are nodes in the top
     let combine top bottem =
-        if (bottem|>Array.isEmpty) then 
-            top
-            |>Array.map (fun x-> x,[x])
-        else
             [|
-            for i in[0..(top.Length-1)] do
-                let a,alst = bottem.[i]
-                let b,blst = bottem.[i+1]
-                let c = top.[i]
+            for i in 0..(Array.length top - 1) do
+                let a = Array.get bottem i
+                let b = Array.get bottem (i+1)
+                let c = Array.get top i
                 if a>b then
-                    yield a+c, (c::alst)
+                    yield a+c
                 else
-                    yield b+c, (c::blst)
+                    yield b+c
             |]
 
     /// calculate the maximum path sum in a number triangle
     /// with O(n^2) time complexity
     let maxPathSumOf heap =
         heap
-        |>Array.foldBack combine <| [||] // find the local max bottom-up
+        |>Array.reduceBack combine // find the local max bottom-up
         |>Array.head // the local max of the root is the maximum
 
     /// helper that processes the text
@@ -149,10 +145,48 @@ module Method1 =
         |>readTriangle
         |>maxPathSumOf
 
+module Method2 =
+    let readTriangle = Method1.readTriangle
+
+    let maxPathSumOf heap=
+        let rec maxSum heap row col =
+            if Array.length heap - row < 1 then 0L,[]
+            else if Array.length heap.[row] - col < 1 then
+                raise (System.InvalidOperationException())
+            else
+                let n = heap.[row].[col]
+                let a,alst = maxSum heap (row+1) (col)
+                let b,blst = maxSum heap (row+1) (col+1)
+                if a>b then a+n,n::alst else b+n,n::blst
+        maxSum heap 0 0
+
+    let solve inputText =
+        inputText
+        |>readTriangle
+        |>maxPathSumOf
+
+module Method1_1 = 
+    let readTriangle = Method2.readTriangle
+    //compact way to write the method
+    let combine nextLine prevResult =
+        prevResult
+        |>Array.pairwise
+        |>Array.map2 (fun x (sum1,sum2)-> if sum1>sum2 then x+sum1 else x+sum2) nextLine
+
+    let maxPathSumOf heap =
+        Array.reduceBack combine heap |> Seq.head
+
+    let solve inputText =
+        inputText
+        |>readTriangle
+        |>maxPathSumOf
+
 [<EntryPoint>]
 let main argv =
-    let (r,lst),t = Misc.Chrono.timeQuick Method1.solve text
+    //let r,t = Misc.Chrono.timeQuick Method1.solve text
+    let r,t = Misc.Chrono.timeQuick Method1.solve text1
     printfn "The sum is %d, time used: %Ams" r t.TotalMilliseconds
-    printfn "%A" lst
+    let r1,t1 = Misc.Chrono.timeQuick Method1_1.solve text1
+    printfn "The sum is %d, time used: %Ams" r1 t1.TotalMilliseconds
     0 // return an integer exit code
 

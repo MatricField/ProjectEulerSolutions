@@ -35,7 +35,7 @@ module Method1 =
         |_ when exp = 0I -> 1I
         |_ -> loop 1I exp
 
-    let solve x =
+    let solve () =
         let rec loop result = function
             |[] -> result
             |(factor, power)::tail -> loop (result * (pow factor power)) tail
@@ -74,7 +74,7 @@ module Method2 =
             |[]->result
         loop 1I lst
 
-    let solve x = arrLcm [|min..max|]
+    let solve () = arrLcm [|min..max|]
 
 let time func vars =
     let t1 = System.DateTime.Now
@@ -89,13 +89,13 @@ let writeLine path content = System.IO.File.AppendAllText(path,content)
 
 [<EntryPoint>]
 let main argv =
-    //printfn "%A" (Method1.solve 0)
+    //printfn "%A" (Method1.solve ())
 
 //    let (a,t) = time (Method2.lcm) (12I,18I)
 //
 //    printfn "%A %Ams" a t.TotalMilliseconds
 
-//    let (a,t) = time (Method2.solve) 0
+//    let (a,t) = time (Method2.solve) ()
 //
 //    printfn "%A %Ams" a t.TotalMilliseconds
 

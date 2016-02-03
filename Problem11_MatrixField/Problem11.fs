@@ -116,7 +116,7 @@ module Method1 =
              findMaxD len intMat; findMaxD2 len intMat;]
              |>List.max
 
-    let inline solve _ =
+    let inline solve () =
         findMax targetLen input
 
 module Method2 =
@@ -159,7 +159,7 @@ module Method2 =
         |(l1, l2) when l1<len || l2<len || l1*l1+l2*l2<len*len -> raise (System.ArgumentException "")
         |_ -> findMaxAdj len intMat
         
-    let inline solve _ =
+    let inline solve () =
         findMax targetLen input
 
 module Method2_1 =
@@ -206,7 +206,7 @@ module Method2_1 =
         |_ when l1<len || l2<len || l1*l1+l2*l2<len*len -> raise (System.ArgumentException "")
         |_ -> findMaxAdj len mat l1 l2
 
-    let inline solve _ =
+    let inline solve () =
         findMax targetLen input
 
 [<EntryPoint>]

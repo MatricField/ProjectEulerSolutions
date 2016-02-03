@@ -15,15 +15,41 @@
 
 open Problem18
 
-let solve _ =
+let data = 
     System.IO.File.ReadAllLines("triangle.txt")
     |>Array.Parallel.map (Misc.Text.ListParser.breakWhiteSpace)
     |>Method1.makeHeap
+
+let solve () =
+    data
     |>Method1.maxPathSumOf
+
+let solve1_1 () =
+    data
+    |>Method1_1.maxPathSumOf
 
 [<EntryPoint>]
 let main argv = 
-    let (r,lst),t = Misc.Chrono.timeQuick solve ()
-    printfn "The sum is %d, time used: %Ams" r t.TotalMilliseconds
-    printfn "%A" lst
+//    let r,t = Misc.Chrono.timeQuick solve ()
+//    printfn "The sum is %d, time used: %Ams" r t.TotalMilliseconds
+//    let r1,t1 = Misc.Chrono.timeQuick solve1_1 ()
+//    printfn "The sum is %d, time used: %Ams" r1 t1.TotalMilliseconds
+    let t1 = 
+        [
+            for _ in 1..1000 do
+                let _, t = Misc.Chrono.time solve ()
+                yield t.TotalMilliseconds
+        ]
+        |>List.average
+
+    let t2 = 
+        [
+            for _ in 1..1000 do
+                let _, t = Misc.Chrono.time solve1_1 ()
+                yield t.TotalMilliseconds
+        ]
+        |>List.average
+
+    printfn "t1 = %f, t2 = %f" t1 t2
+
     0 // return an integer exit code

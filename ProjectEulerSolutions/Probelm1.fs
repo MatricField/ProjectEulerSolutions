@@ -24,7 +24,7 @@ module Method1 = // naive search
             |_ -> []
         search 1
 open System.Linq
-    let solve = 
+    let solve () = 
         let list1 = searchMultiplesOf 3 MAX
         let list2 = searchMultiplesOf 5 MAX
         let list3 = list1.Intersect list2
@@ -59,13 +59,13 @@ module Method2 =
         let a = (MAX - 1)/x
         (0 + a*x) * (a + 1) / 2
 
-    let solve =
+    let solve () =
         getSum 3 + getSum 5 - getSum (3*5)
 
     end
 
 [<EntryPoint>]
 let main argv =
-    printfn "%A\n" Method1.solve
-    printfn "%A\n" Method2.solve
+    printfn "%A\n" <| Method1.solve()
+    printfn "%A\n" <| Method2.solve()
     0 // return an integer exit code

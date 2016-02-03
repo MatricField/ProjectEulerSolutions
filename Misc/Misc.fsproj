@@ -51,6 +51,7 @@
     <Compile Include="Chrono.fs" />
     <None Include="App.config" />
     <Compile Include="Text.fs" />
+    <Compile Include="DebugTools.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

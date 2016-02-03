@@ -207,7 +207,7 @@ let input =
     53503534226472524250874054075591789781264330331690"
 
 module Method1 =
-    let solve _ =
+    let solve () =
         Misc.Text.ListParser.breakWhiteSpace input
         |>Array.Parallel.map (System.Numerics.BigInteger.Parse)
         |>Array.sum

@@ -84,7 +84,7 @@ module Method2 =
             |x when isPal x -> scan iter (x::result) (iter a, b)
             |_ -> scan iter result (iter a, b)
     
-    let solve =
+    let solve () =
         scan (fun x-> x-1I) [] (MAX,MAX)
         //|>List.map (fun x-> printfn "%A" x; x)
         |>List.toArray
@@ -95,7 +95,7 @@ module Method2 =
 
 [<EntryPoint>]
 let main argv = 
-    Method2.solve
+    Method2.solve()
     |>printfn "Solution: %A"
 
     0 // return an integer exit code

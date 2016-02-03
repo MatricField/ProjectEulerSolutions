@@ -7,8 +7,7 @@
 *)
 
 module Method1=
-    let solve = 
-        lazy
+    let solve () = 
         let a = 2I**1000
         a.ToString().ToCharArray()
         |>Array.Parallel.map (fun x-> string(x))
@@ -17,5 +16,5 @@ module Method1=
 
 [<EntryPoint>]
 let main argv = 
-    printfn "%A" Method1.solve.Value
+    printfn "%A" <| Method1.solve()
     0 // return an integer exit code

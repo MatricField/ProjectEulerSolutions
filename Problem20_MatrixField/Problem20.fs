@@ -31,7 +31,7 @@ module Method1 =
         |>Array.Parallel.map (fun x-> string(x)|>System.Numerics.BigInteger.Parse)
         |>Array.sum
 
-    let solve _ =
+    let solve () =
         "The sum is: " + (digitSumOf TARGET).ToString()
 
 [<EntryPoint>]

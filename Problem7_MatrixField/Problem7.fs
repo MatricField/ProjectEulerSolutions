@@ -29,13 +29,13 @@ module Method1 =
             |_ -> result
         loop [2I] 2I
 
-    let solve x =
+    let solve () =
         let number = 10001
         search number
         |>List.head
 
 [<EntryPoint>]
 let main argv = 
-    let (result,time) = Msic.time Method1.solve 0
+    let (result,time) = Msic.time Method1.solve ()
     printfn "%A, %As" result time.TotalSeconds
     0 // return an integer exit code
