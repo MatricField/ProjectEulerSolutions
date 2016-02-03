@@ -5,14 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>cc420f0a-d52d-4011-a4bc-9bf4eda7302f</ProjectGuid>
+    <ProjectGuid>{24d3b19e-c060-47c4-99ad-659c9d6230b7}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Problem2_MatrixField</RootNamespace>
-    <AssemblyName>Problem2_MatrixField</AssemblyName>
+    <RootNamespace>Solutions_MatrixField</RootNamespace>
+    <AssemblyName>Solutions_MatrixField</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
-    <Name>Problem2_MatrixField</Name>
+    <Name>Template</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,8 +23,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Debug\Problem2_MatrixField.XML</DocumentationFile>
-    <Prefer32Bit>true</Prefer32Bit>
+    <DocumentationFile>bin\Debug\Template.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -34,7 +34,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Release\Problem2_MatrixField.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Template.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
@@ -48,8 +48,41 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="Program.fs" />
+    <Compile Include="Problem1.fs" />
+    <Compile Include="Problem2.fs" />
+    <Compile Include="Problem3.fs" />
+    <Compile Include="Problem4.fs" />
+    <Compile Include="Problem5.fs" />
+    <Compile Include="Problem6.fs" />
+    <Compile Include="Problem7.fs" />
+    <Compile Include="Problem8.fs" />
+    <Compile Include="Problem9.fs" />
+    <Compile Include="Problem10.fs" />
+    <Compile Include="Problem11.fs" />
+    <Compile Include="Problem12.fs" />
+    <Compile Include="Problem13.fs" />
+    <Compile Include="Problem14.fs" />
+    <Compile Include="Problem16.fs" />
+    <Compile Include="Problem18.fs" />
+    <Compile Include="Problem20.fs" />
+    <Compile Include="Problem21.fs" />
+    <Compile Include="Problem25.fs" />
+    <Compile Include="Problem48.fs" />
+    <Compile Include="Problem67.fs" />
+    <Compile Include="EntryPoint.fs" />
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Math\Math.fsproj">
+      <Name>Math</Name>
+      <Project>{2fe8847c-89a3-49f4-b4ca-4d30d04a883a}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Misc\Misc.fsproj">
+      <Name>Misc</Name>
+      <Project>{996ac7a2-1702-4f7f-8cdf-bb8088ee65d0}</Project>
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

@@ -1,4 +1,4 @@
-﻿namespace ProjectEulerSolutions.AssemblyInfo
+﻿namespace Solutions_MatrixField.AssemblyInfo
 
 open System.Reflection
 open System.Runtime.CompilerServices
@@ -7,11 +7,11 @@ open System.Runtime.InteropServices
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[<assembly: AssemblyTitle("ProjectEulerSolutions")>]
+[<assembly: AssemblyTitle("Solutions_MatrixField")>]
 [<assembly: AssemblyDescription("")>]
 [<assembly: AssemblyConfiguration("")>]
 [<assembly: AssemblyCompany("")>]
-[<assembly: AssemblyProduct("ProjectEulerSolutions")>]
+[<assembly: AssemblyProduct("Solutions_MatrixField")>]
 [<assembly: AssemblyCopyright("Copyright ©  2015")>]
 [<assembly: AssemblyTrademark("")>]
 [<assembly: AssemblyCulture("")>]
@@ -22,7 +22,7 @@ open System.Runtime.InteropServices
 [<assembly: ComVisible(false)>]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[<assembly: Guid("029db6c5-a52a-41a9-a263-f1e9766185f9")>]
+[<assembly: Guid("da0a87a6-353c-44b5-b5db-16fc6d3fd8b8")>]
 
 // Version information for an assembly consists of the following four values:
 // 
