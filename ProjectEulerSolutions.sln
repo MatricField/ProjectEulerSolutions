@@ -53,6 +53,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Problem21_MatrixField", "Pr
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Problem48_MatrixField", "Problem48_MatrixField\Problem48_MatrixField.fsproj", "{B8D83B66-9406-4A8D-83D6-492A7EC6A68D}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Solutions_MatrixField", "Solutions_MatrixField\Solutions_MatrixField.fsproj", "{24D3B19E-C060-47C4-99AD-659C9D6230B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -363,6 +365,18 @@ Global
 		{B8D83B66-9406-4A8D-83D6-492A7EC6A68D}.Release|x64.Build.0 = Release|Any CPU
 		{B8D83B66-9406-4A8D-83D6-492A7EC6A68D}.Release|x86.ActiveCfg = Release|Any CPU
 		{B8D83B66-9406-4A8D-83D6-492A7EC6A68D}.Release|x86.Build.0 = Release|Any CPU
+		{24D3B19E-C060-47C4-99AD-659C9D6230B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24D3B19E-C060-47C4-99AD-659C9D6230B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24D3B19E-C060-47C4-99AD-659C9D6230B7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{24D3B19E-C060-47C4-99AD-659C9D6230B7}.Debug|x64.Build.0 = Debug|Any CPU
+		{24D3B19E-C060-47C4-99AD-659C9D6230B7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{24D3B19E-C060-47C4-99AD-659C9D6230B7}.Debug|x86.Build.0 = Debug|Any CPU
+		{24D3B19E-C060-47C4-99AD-659C9D6230B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24D3B19E-C060-47C4-99AD-659C9D6230B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24D3B19E-C060-47C4-99AD-659C9D6230B7}.Release|x64.ActiveCfg = Release|Any CPU
+		{24D3B19E-C060-47C4-99AD-659C9D6230B7}.Release|x64.Build.0 = Release|Any CPU
+		{24D3B19E-C060-47C4-99AD-659C9D6230B7}.Release|x86.ActiveCfg = Release|Any CPU
+		{24D3B19E-C060-47C4-99AD-659C9D6230B7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
