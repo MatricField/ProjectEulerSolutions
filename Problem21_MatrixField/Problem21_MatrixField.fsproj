@@ -5,10 +5,10 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{24d3b19e-c060-47c4-99ad-659c9d6230b7}</ProjectGuid>
+    <ProjectGuid>{57f0f070-b3b7-4d6f-adf1-125ea1b5ca45}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Solutions_MatrixField</RootNamespace>
-    <AssemblyName>Solutions_MatrixField</AssemblyName>
+    <RootNamespace>Problem21_MatrixField</RootNamespace>
+    <AssemblyName>Problem21_MatrixField</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
@@ -48,8 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="Probelm00001.fs" />
-    <Compile Include="EntryPoint.fs" />
+    <Compile Include="Program.fs" />
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
