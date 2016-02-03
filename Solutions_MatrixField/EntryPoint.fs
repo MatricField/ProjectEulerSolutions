@@ -1,9 +1,4 @@
-﻿//https://projecteuler.net/problem=
-
-(*
- *Todo: insert the problem here
-*)
-
+﻿
 
 [<EntryPoint>]
 let main argv = 

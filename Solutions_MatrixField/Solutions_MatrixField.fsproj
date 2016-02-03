@@ -48,7 +48,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="Probelm00001.fs" />
+    <Compile Include="Problem1.fs" />
+    <Compile Include="Problem2.fs" />
+    <Compile Include="Problem3.fs" />
+    <Compile Include="Problem4.fs" />
+    <Compile Include="Problem5.fs" />
+    <Compile Include="Problem6.fs" />
+    <Compile Include="Problem7.fs" />
+    <Compile Include="Problem8.fs" />
+    <Compile Include="Problem9.fs" />
+    <Compile Include="Problem10.fs" />
+    <Compile Include="Problem11.fs" />
+    <Compile Include="Problem12.fs" />
+    <Compile Include="Problem13.fs" />
+    <Compile Include="Problem14.fs" />
+    <Compile Include="Problem16.fs" />
+    <Compile Include="Problem18.fs" />
+    <Compile Include="Problem20.fs" />
+    <Compile Include="Problem21.fs" />
+    <Compile Include="Problem25.fs" />
+    <Compile Include="Problem48.fs" />
+    <Compile Include="Problem67.fs" />
     <Compile Include="EntryPoint.fs" />
     <None Include="App.config" />
   </ItemGroup>

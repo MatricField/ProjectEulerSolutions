@@ -62,11 +62,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Problem18_MatrixField\Problem18_MatrixField.fsproj">
-      <Name>Problem18_MatrixField</Name>
-      <Project>{ce27c4a2-0872-46ef-ae27-a459da6c3575}</Project>
-      <Private>True</Private>
-    </ProjectReference>
     <Reference Include="mscorlib" />
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>True</Private>

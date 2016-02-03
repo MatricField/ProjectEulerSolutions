@@ -51,13 +51,6 @@
     <Compile Include="Problem5.fs" />
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Problem4_MatrixField\Problem4_MatrixField.fsproj">
-      <Name>Problem4_MatrixField</Name>
-      <Project>{51ba9099-f08b-4e60-a2bb-a47791fa6d21}</Project>
-      <Private>True</Private>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
   </PropertyGroup>
